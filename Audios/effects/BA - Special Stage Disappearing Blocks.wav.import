@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chsmcqlgxphd2"
+path="res://.godot/imported/BA - Special Stage Disappearing Blocks.wav-862c53c6830b4593b731561dbe4a0820.sample"
+
+[deps]
+
+source_file="res://Audios/effects/BA - Special Stage Disappearing Blocks.wav"
+dest_files=["res://.godot/imported/BA - Special Stage Disappearing Blocks.wav-862c53c6830b4593b731561dbe4a0820.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

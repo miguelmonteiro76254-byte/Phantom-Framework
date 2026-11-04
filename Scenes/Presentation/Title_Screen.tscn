@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://r6k1shwxawyt"]
+
+[ext_resource type="Script" uid="uid://d063ufhloh5qj" path="res://Scripts/Level/Title_screen.gd" id="1_w8j8g"]
+[ext_resource type="AudioStream" uid="uid://dd5lev25lkqi2" path="res://Audios/effects/switch.mp3" id="2_3a0la"]
+[ext_resource type="FontFile" uid="uid://c20q5nj7k856r" path="res://fonts/system.fnt" id="3_5h6xy"]
+
+[node name="Control" type="Control" unique_id=400352726 node_paths=PackedStringArray("start_label", "level_select_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w8j8g")
+next_scene = "uid://crbh1tmu2v62q"
+level_select_scene = "uid://dwgnq2x53ui4d"
+start_label = NodePath("Start")
+level_select_label = NodePath("Level Select")
+move_sound = ExtResource("2_3a0la")
+selected_color = Color(1, 1, 1, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1836741619]
+stream = ExtResource("2_3a0la")
+
+[node name="Title" type="Label" parent="." unique_id=1488866153]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 320.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_5h6xy")
+text = "PHANTOM FRAMEWORK"
+horizontal_alignment = 1
+
+[node name="Start" type="Label" parent="." unique_id=770375993]
+layout_mode = 0
+offset_top = 104.0
+offset_right = 320.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("3_5h6xy")
+text = "START DEMO"
+horizontal_alignment = 1
+
+[node name="Level Select" type="Label" parent="." unique_id=1585651590]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 320.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_5h6xy")
+text = "level select"
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="." unique_id=1920849231]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 207.0
+offset_right = 112.0
+offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("3_5h6xy")
+text = "GODOT 4.8
+MR. ARCH 2027"

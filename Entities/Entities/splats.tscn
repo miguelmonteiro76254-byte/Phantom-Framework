@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cm01hau1s2jm1"]
+
+[ext_resource type="Script" uid="uid://4uik0oboabr2" path="res://Scripts/Badniks/splats.gd" id="1_3ah41"]
+[ext_resource type="PackedScene" uid="uid://c443nyxulqfe0" path="res://Entities/Objects/Explosion.tscn" id="2_y41ul"]
+[ext_resource type="AudioStream" uid="uid://la53npy1qfu4" path="res://Audios/effects/explosion.wav" id="3_po25y"]
+[ext_resource type="Texture2D" uid="uid://cnfr76vnur552" path="res://sprites/Enemies/Splats.png" id="4_aqrky"]
+
+[sub_resource type="Animation" id="Animation_x1cb2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_t2nrx"]
+resource_name = "move"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4561n"]
+_data = {
+&"RESET": SubResource("Animation_x1cb2"),
+&"move": SubResource("Animation_t2nrx")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf00q"]
+size = Vector2(12, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eebkh"]
+size = Vector2(12, 35)
+
+[node name="Splats" type="CharacterBody2D" unique_id=928443657 node_paths=PackedStringArray("skin", "animation_player", "hitbox")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_3ah41")
+skin = NodePath("Sprite2D")
+animation_player = NodePath("AnimationPlayer")
+hitbox = NodePath("Area2D")
+player_mask = 5
+hitbox_size = Vector2(28, 22)
+anim_air = &""
+anim_ground = &""
+explosion_scene = ExtResource("2_y41ul")
+destroy_sound = ExtResource("3_po25y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=844473900]
+position = Vector2(0.5, -3)
+texture = ExtResource("4_aqrky")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1591684876]
+libraries/ = SubResource("AnimationLibrary_4561n")
+autoplay = &"move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=928863368]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_kf00q")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=288253817]
+position = Vector2(-7.5, 0)
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D" unique_id=972768557]
+position = Vector2(7, -0.5)
+shape = SubResource("RectangleShape2D_eebkh")

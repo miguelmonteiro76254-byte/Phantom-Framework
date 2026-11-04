@@ -1,0 +1,276 @@
+[gd_scene format=3 uid="uid://di6jy2m3is15l"]
+
+[ext_resource type="Script" uid="uid://bwnuvxc0qci4o" path="res://Scripts/Player/sonic.gd" id="1_qghcm"]
+[ext_resource type="PackedScene" uid="uid://b3w4h8bkuqg3y" path="res://Entities/Objects/RingsLost.tscn" id="3_uwkoy"]
+[ext_resource type="AudioStream" uid="uid://dmniqsybgrhfe" path="res://Audios/effects/jump.wav" id="7_shrig"]
+[ext_resource type="AudioStream" uid="uid://b2iu8sc6kygq7" path="res://Audios/effects/spin.wav" id="8_stdj8"]
+[ext_resource type="AudioStream" uid="uid://bgdl65wyqxxc3" path="res://Audios/effects/spinDashRelease.wav" id="9_furr8"]
+[ext_resource type="AudioStream" uid="uid://bdadurpaqsji5" path="res://Audios/effects/peelOutCharge.wav" id="10_dornm"]
+[ext_resource type="AudioStream" uid="uid://c4otidw3ymsj3" path="res://Audios/effects/peelOutRelease.wav" id="11_jg02p"]
+[ext_resource type="AudioStream" uid="uid://cxlxnpc18nrgq" path="res://Audios/effects/brake.wav" id="12_l7ebm"]
+[ext_resource type="AudioStream" uid="uid://b2h4xhydt3d5m" path="res://Audios/effects/grab.wav" id="13_ty13t"]
+[ext_resource type="AudioStream" uid="uid://ve7lrybijabq" path="res://Audios/effects/transformSuper.wav" id="14_hx3h6"]
+[ext_resource type="AudioStream" uid="uid://cr2o51grw4ksm" path="res://Audios/effects/charge.wav" id="15_wk656"]
+[ext_resource type="AudioStream" uid="uid://n8ee2d578g57" path="res://Audios/effects/loseRings.wav" id="16_4jnwl"]
+[ext_resource type="AudioStream" uid="uid://suxtv4ghw5hq" path="res://Audios/effects/hurt.wav" id="17_jxl8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuelp"]
+size = Vector2(16, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sng52"]
+size = Vector2(16, 19)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0wspe"]
+radius = 4.0
+
+[sub_resource type="Animation" id="Animation_7cmu7"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_xc860"]
+resource_name = "balance"
+loop_mode = 1
+step = 0.025
+
+[sub_resource type="Animation" id="Animation_xi8qy"]
+resource_name = "damage"
+length = 0.4
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_1f2ip"]
+resource_name = "die"
+length = 0.3
+
+[sub_resource type="Animation" id="Animation_hy6vt"]
+resource_name = "fall"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_5lxov"]
+resource_name = "hang"
+length = 0.4
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_8xq71"]
+resource_name = "idle"
+length = 3.0
+
+[sub_resource type="Animation" id="Animation_n1fkv"]
+resource_name = "look_down"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_gaj2q"]
+resource_name = "look_up"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_bn28g"]
+resource_name = "peelout"
+length = 0.4
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_rdjfh"]
+resource_name = "push"
+length = 0.8
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_wwwmj"]
+resource_name = "roll"
+length = 0.25
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_1el1a"]
+resource_name = "run"
+length = 0.15
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_m3lbm"]
+resource_name = "skid"
+length = 0.1
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_k3dda"]
+resource_name = "spindash"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_32qub"]
+resource_name = "spring"
+length = 0.3333
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_mmy3g"]
+resource_name = "super"
+length = 0.5667
+
+[sub_resource type="Animation" id="Animation_vs02p"]
+resource_name = "wait"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_ibhv8"]
+resource_name = "wait_loop"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_1ajjp"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_cidg7"]
+resource_name = "win"
+length = 0.2
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ddmhj"]
+_data = {
+&"RESET": SubResource("Animation_7cmu7"),
+&"balance": SubResource("Animation_xc860"),
+&"damage": SubResource("Animation_xi8qy"),
+&"die": SubResource("Animation_1f2ip"),
+&"fall": SubResource("Animation_hy6vt"),
+&"hang": SubResource("Animation_5lxov"),
+&"idle": SubResource("Animation_8xq71"),
+&"look_down": SubResource("Animation_n1fkv"),
+&"look_up": SubResource("Animation_gaj2q"),
+&"peelout": SubResource("Animation_bn28g"),
+&"push": SubResource("Animation_rdjfh"),
+&"roll": SubResource("Animation_wwwmj"),
+&"run": SubResource("Animation_1el1a"),
+&"skid": SubResource("Animation_m3lbm"),
+&"spindash": SubResource("Animation_k3dda"),
+&"spring": SubResource("Animation_32qub"),
+&"super": SubResource("Animation_mmy3g"),
+&"wait": SubResource("Animation_vs02p"),
+&"wait_loop": SubResource("Animation_ibhv8"),
+&"walk": SubResource("Animation_1ajjp"),
+&"win": SubResource("Animation_cidg7")
+}
+
+[sub_resource type="Animation" id="Animation_jg56b"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_7dmii"]
+resource_name = "normal"
+
+[sub_resource type="Animation" id="Animation_hp60k"]
+resource_name = "normal_to_super"
+
+[sub_resource type="Animation" id="Animation_cejuw"]
+resource_name = "super"
+length = 0.6
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_b8oyw"]
+resource_name = "super_to_normal"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6c3no"]
+_data = {
+&"RESET": SubResource("Animation_jg56b"),
+&"normal": SubResource("Animation_7dmii"),
+&"normal_to_super": SubResource("Animation_hp60k"),
+&"super": SubResource("Animation_cejuw"),
+&"super_to_normal": SubResource("Animation_b8oyw")
+}
+
+[node name="Knuckles" type="CharacterBody2D" unique_id=1097049835 node_paths=PackedStringArray("animation_player", "palette_player", "jump_sound", "spindash_sound", "hurt_sound", "death_sound", "camera", "roll_sound", "spindash_release_sound", "peelout_charge_sound", "peelout_release_sound", "skid_sound", "bar_grab_sound", "rings_lost_sound", "super_transform_sound", "col_normal", "col_crouch", "col_roll", "col_jump")]
+z_index = 2
+collision_layer = 1153
+collision_mask = 1153
+script = ExtResource("1_qghcm")
+animation_player = NodePath("Animations")
+palette_player = NodePath("Pallete")
+jump_sound = NodePath("Jump")
+spindash_sound = NodePath("Charge")
+hurt_sound = NodePath("Hurt")
+death_sound = NodePath("Hurt")
+camera = NodePath("Camera")
+roll_sound = NodePath("Roll")
+spindash_release_sound = NodePath("Spindash Release")
+peelout_charge_sound = NodePath("Peelout Charge")
+peelout_release_sound = NodePath("Peelout Release")
+skid_sound = NodePath("Skid")
+bar_grab_sound = NodePath("Grab")
+rings_lost_sound = NodePath("Damage")
+super_transform_sound = NodePath("Transform")
+peelout_enabled = false
+glide_enabled = true
+arrow_knockback_enabled = false
+arrow_knockback_air = 150.0
+col_normal = NodePath("Col")
+col_crouch = NodePath("ColSmall")
+col_roll = NodePath("ColSmall")
+col_jump = NodePath("ColSmallUp")
+input_jump = &"jump"
+roll_skin_offset = 10.0
+ghost_blink_interval = 0.001
+genesis_angle_snap = true
+fall_animation_enabled = true
+max_depenetration = 15.0
+bar_hang_offset = Vector2(0, 39)
+lost_ring_scene = ExtResource("3_uwkoy")
+
+[node name="Col" type="CollisionShape2D" parent="." unique_id=1370668015]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_tuelp")
+
+[node name="ColSmall" type="CollisionShape2D" parent="." unique_id=1828808556]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_sng52")
+
+[node name="ColSmallUp" type="CollisionShape2D" parent="." unique_id=1321658928]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_sng52")
+
+[node name="ThingToKnowAngle1" type="CollisionShape2D" parent="." unique_id=662238816]
+position = Vector2(-12, -4)
+shape = SubResource("CircleShape2D_0wspe")
+
+[node name="ThingToKnowAngle2" type="CollisionShape2D" parent="." unique_id=105544363]
+position = Vector2(12, -4)
+shape = SubResource("CircleShape2D_0wspe")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=959986609]
+position = Vector2(0, -18)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="Animations" type="AnimationPlayer" parent="." unique_id=319321222]
+libraries/ = SubResource("AnimationLibrary_ddmhj")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=905915570]
+stream = ExtResource("7_shrig")
+
+[node name="Roll" type="AudioStreamPlayer" parent="." unique_id=749896851]
+stream = ExtResource("8_stdj8")
+
+[node name="Spindash Release" type="AudioStreamPlayer" parent="." unique_id=2003766969]
+stream = ExtResource("9_furr8")
+
+[node name="Peelout Charge" type="AudioStreamPlayer" parent="." unique_id=1330521549]
+stream = ExtResource("10_dornm")
+
+[node name="Peelout Release" type="AudioStreamPlayer" parent="." unique_id=912175138]
+stream = ExtResource("11_jg02p")
+
+[node name="Skid" type="AudioStreamPlayer" parent="." unique_id=732643026]
+stream = ExtResource("12_l7ebm")
+
+[node name="Grab" type="AudioStreamPlayer" parent="." unique_id=1622157273]
+stream = ExtResource("13_ty13t")
+
+[node name="Transform" type="AudioStreamPlayer" parent="." unique_id=360176239]
+stream = ExtResource("14_hx3h6")
+
+[node name="Charge" type="AudioStreamPlayer" parent="." unique_id=1645881381]
+stream = ExtResource("15_wk656")
+
+[node name="Damage" type="AudioStreamPlayer" parent="." unique_id=454147086]
+stream = ExtResource("16_4jnwl")
+
+[node name="Hurt" type="AudioStreamPlayer" parent="." unique_id=615527968]
+stream = ExtResource("17_jxl8m")
+
+[node name="Pallete" type="AnimationPlayer" parent="." unique_id=1658737481]
+libraries/ = SubResource("AnimationLibrary_6c3no")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2102841105]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 8.0
+color = Color(0.857409, 0.14588448, 4.813075e-07, 1)

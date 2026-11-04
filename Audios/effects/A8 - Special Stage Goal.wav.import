@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://q5kwwhtd6f0t"
+path="res://.godot/imported/A8 - Special Stage Goal.wav-d923fbb168bd2a0b99f98553aeee9700.sample"
+
+[deps]
+
+source_file="res://Audios/effects/A8 - Special Stage Goal.wav"
+dest_files=["res://.godot/imported/A8 - Special Stage Goal.wav-d923fbb168bd2a0b99f98553aeee9700.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dwgnq2x53ui4d"]
+
+[ext_resource type="Script" uid="uid://d07w5u4plv0v4" path="res://Scripts/Hud/Level_Select_S2.gd" id="1_xx341"]
+[ext_resource type="FontFile" uid="uid://b3qebdtmdc6e5" path="res://sprites/fonts/small_font_s1.png" id="2_4aihh"]
+[ext_resource type="Texture2D" uid="uid://d3qvo0bqnefna" path="res://sprites/LevelSelect/Icon/Default.png" id="2_70fr2"]
+[ext_resource type="AudioStream" uid="uid://vtm2vnykyd8k" path="res://Audios/musics/Options.mp3" id="3_4aihh"]
+[ext_resource type="Texture2D" uid="uid://ebs5aeremjtj" path="res://sprites/LevelSelect/BG.png" id="3_6g55c"]
+
+[node name="Control" type="Control" unique_id=1379480403]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xx341")
+scene_folders = Array[String](["res://Scenes/Zones"])
+zone_order = Array[String](["cgz", "ifz", "dcz"])
+zone_names = {
+"TAILS_TEST_AREA": "TAILS TEST",
+"cgz": "CASTLE GARDEN",
+"dcz": "DARK CASTLE",
+"ifz": "IRON FOREST"
+}
+icon_folder = "res://sprites/LevelSelect/Icon"
+default_icon = ExtResource("2_70fr2")
+music = ExtResource("3_4aihh")
+font = ExtResource("2_4aihh")
+background_texture = ExtResource("3_6g55c")

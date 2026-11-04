@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b40jmt3blh15l"]
+
+[ext_resource type="Script" uid="uid://c6h7hwxugeixh" path="res://Scripts/Badniks/motospring.gd" id="1_ojhxi"]
+[ext_resource type="PackedScene" uid="uid://c443nyxulqfe0" path="res://Entities/Objects/Explosion.tscn" id="2_a1kkc"]
+[ext_resource type="AudioStream" uid="uid://la53npy1qfu4" path="res://Audios/effects/explosion.wav" id="2_c06px"]
+[ext_resource type="Texture2D" uid="uid://cmqki6qcy082o" path="res://sprites/Enemies/MotoSpring/sheet.png" id="3_pbxj3"]
+[ext_resource type="AudioStream" uid="uid://bumbyoglvavvm" path="res://Audios/effects/spring.wav" id="4_6hqcs"]
+
+[sub_resource type="Animation" id="Animation_x1cb2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_t2nrx"]
+resource_name = "move"
+length = 0.2667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4561n"]
+_data = {
+&"RESET": SubResource("Animation_x1cb2"),
+&"move": SubResource("Animation_t2nrx")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwt0p"]
+radius = 15.0333
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ng46"]
+size = Vector2(29, 3.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_td8r6"]
+radius = 15.0
+
+[node name="MotoSpring" type="CharacterBody2D" unique_id=990023807 node_paths=PackedStringArray("spring_area", "bounce_sound", "skin", "animation_player", "hitbox")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ojhxi")
+spring_area = NodePath("Area2DSpring")
+anim_bounce = &""
+bounce_sound = NodePath("AudioStreamPlayer")
+spindash_kill_speed = 0.1
+skin = NodePath("Sprite2D")
+animation_player = NodePath("AnimationPlayer")
+hitbox = NodePath("Area2D")
+player_mask = 5
+anim_wait = &""
+explosion_scene = ExtResource("2_a1kkc")
+destroy_sound = ExtResource("2_c06px")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=8733508]
+position = Vector2(7, 0)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_pbxj3")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2067555431]
+libraries/ = SubResource("AnimationLibrary_4561n")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=82383604]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D" unique_id=1917539649]
+position = Vector2(7, 2)
+shape = SubResource("CircleShape2D_qwt0p")
+
+[node name="Area2DSpring" type="Area2D" parent="." unique_id=400495173]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2DSpring" unique_id=1901894180]
+position = Vector2(7.5, -14.75)
+shape = SubResource("RectangleShape2D_2ng46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1277716343]
+position = Vector2(7, 2)
+shape = SubResource("CapsuleShape2D_td8r6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1754205014]
+stream = ExtResource("4_6hqcs")

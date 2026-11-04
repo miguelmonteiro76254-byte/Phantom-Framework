@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gu6dvg3q3owv"
+path="res://.godot/imported/B2 - Drown.wav-62ee257bff92fc63909afbc374d690dc.sample"
+
+[deps]
+
+source_file="res://Audios/effects/B2 - Drown.wav"
+dest_files=["res://.godot/imported/B2 - Drown.wav-62ee257bff92fc63909afbc374d690dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

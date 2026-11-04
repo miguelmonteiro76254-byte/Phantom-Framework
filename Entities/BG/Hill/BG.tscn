@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://6spdhbr86y5a"]
+
+[ext_resource type="Texture2D" uid="uid://c8i2plrurpyur" path="res://sprites/BG/Hill/BG.png" id="1_ofo4w"]
+
+[node name="BG" type="ParallaxBackground" unique_id=1779954145]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1838492027]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer" unique_id=22661903]
+texture_repeat = 2
+offset_left = -102272.0
+offset_top = -75520.0
+offset_right = 150046.0
+offset_bottom = 181823.0
+texture = ExtResource("1_ofo4w")
+stretch_mode = 1

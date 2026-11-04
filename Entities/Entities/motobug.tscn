@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c7k0n32yg0xas"]
+
+[ext_resource type="Script" uid="uid://r3mrj3bknwei" path="res://Scripts/Badniks/motobug.gd" id="1_auc71"]
+[ext_resource type="PackedScene" uid="uid://c443nyxulqfe0" path="res://Entities/Objects/Explosion.tscn" id="2_8gg1j"]
+[ext_resource type="Texture2D" uid="uid://ciw8ue45p575e" path="res://sprites/Enemies/MotoBug/sheet.png" id="2_ko7yv"]
+[ext_resource type="AudioStream" uid="uid://la53npy1qfu4" path="res://Audios/effects/explosion.wav" id="2_o8fl6"]
+
+[sub_resource type="Animation" id="Animation_x1cb2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_t2nrx"]
+resource_name = "move"
+length = 0.2667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4561n"]
+_data = {
+&"RESET": SubResource("Animation_x1cb2"),
+&"move": SubResource("Animation_t2nrx")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_td8r6"]
+radius = 14.0
+height = 28.0
+
+[node name="Motobug" type="CharacterBody2D" unique_id=1301052847 node_paths=PackedStringArray("skin", "animation_player", "hitbox")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_auc71")
+skin = NodePath("Sprite2D")
+animation_player = NodePath("AnimationPlayer")
+hitbox = NodePath("Area2D")
+player_mask = 5
+anim_wait = &""
+explosion_scene = ExtResource("2_8gg1j")
+destroy_sound = ExtResource("2_o8fl6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2119072907]
+position = Vector2(7, 0)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_ko7yv")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=641897745]
+libraries/ = SubResource("AnimationLibrary_4561n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1394843923]
+position = Vector2(7, 2.5)
+shape = SubResource("CapsuleShape2D_td8r6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2128860449]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D" unique_id=953593066]
+position = Vector2(7, 2.5)
+shape = SubResource("CapsuleShape2D_td8r6")

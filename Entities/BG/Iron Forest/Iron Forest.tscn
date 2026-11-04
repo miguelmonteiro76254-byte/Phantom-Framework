@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dr44fpa0irkt3"]
+
+[ext_resource type="Texture2D" uid="uid://mlcfoyna8hqt" path="res://sprites/BG/Iron Forest/sky.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://jqert78tdn4g" path="res://sprites/BG/Iron Forest/4.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://uacsgu4hkqxx" path="res://sprites/BG/Iron Forest/2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://88tu4aofb5n5" path="res://sprites/BG/Iron Forest/1.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c6ijl26uw0ejp" path="res://sprites/BG/Iron Forest/marblegarden thingy.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c5dr6tjv5u31h" path="res://sprites/BG/Iron Forest/3.png" id="6"]
+
+[node name="Iron Forest" type="ParallaxBackground" unique_id=722677790]
+
+[node name="BG" type="ParallaxLayer" parent="." unique_id=1210172908]
+position = Vector2(5, 105)
+motion_scale = Vector2(0.2, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="BG" unique_id=1251166298]
+texture_repeat = 2
+offset_left = -100544.0
+offset_top = -54237.0
+offset_right = 86453.0
+offset_bottom = 48743.0
+texture = ExtResource("1")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FARFARTrees" type="ParallaxLayer" parent="." unique_id=1520675329]
+position = Vector2(5, 105)
+motion_scale = Vector2(0.3, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="FARFARTrees" unique_id=1172675151]
+texture_repeat = 2
+offset_left = -100552.0
+offset_top = -54363.0
+offset_right = 86445.0
+offset_bottom = 48617.0
+texture = ExtResource("2")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FarTrees" type="ParallaxLayer" parent="." unique_id=1302806210]
+position = Vector2(5, 105)
+motion_scale = Vector2(0.4, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="FarTrees" unique_id=258842952]
+texture_repeat = 2
+offset_left = -100546.0
+offset_top = -54379.0
+offset_right = 86451.0
+offset_bottom = 48601.0
+texture = ExtResource("3")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Trees" type="ParallaxLayer" parent="." unique_id=1909696636]
+position = Vector2(5, 105)
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="Trees" unique_id=1182093671]
+texture_repeat = 2
+offset_left = -100551.0
+offset_top = -54334.0
+offset_right = 86446.0
+offset_bottom = 48646.0
+texture = ExtResource("4")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Blushes" type="ParallaxLayer" parent="." unique_id=1037607129]
+position = Vector2(5, 105)
+motion_scale = Vector2(0.7, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="Blushes" unique_id=649044856]
+texture_repeat = 2
+offset_left = -100551.0
+offset_top = -54334.0
+offset_right = 86446.0
+offset_bottom = 48646.0
+texture = ExtResource("5")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Leafes" type="ParallaxLayer" parent="." unique_id=1322309373]
+position = Vector2(5, 105)
+motion_scale = Vector2(0.8, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="Leafes" unique_id=1337905553]
+texture_repeat = 2
+offset_left = -100544.0
+offset_top = -54393.0
+offset_right = 86453.0
+offset_bottom = 48587.0
+texture = ExtResource("6")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://o3domhhdn3de"
+path="res://.godot/imported/C7 - MZ Chain Rising.wav-978e513df6828d7308b40cf1c2537897.sample"
+
+[deps]
+
+source_file="res://Audios/effects/C7 - MZ Chain Rising.wav"
+dest_files=["res://.godot/imported/C7 - MZ Chain Rising.wav-978e513df6828d7308b40cf1c2537897.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,10 @@
+[gd_resource type="TileSet" format=3 uid="uid://ch8t77pvvjtaw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tmucn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nangp"]
+margins = Vector2i(128, 0)
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_tmucn")
+sources/1 = SubResource("TileSetAtlasSource_nangp")

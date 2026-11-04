@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://b5e83r65yvonr"]
+
+[ext_resource type="Script" uid="uid://bwdx8fx026fsr" path="res://Scripts/Badniks/catterkiller.gd" id="1_s3gcn"]
+[ext_resource type="PackedScene" uid="uid://c443nyxulqfe0" path="res://Entities/Objects/Explosion.tscn" id="2_0n2u3"]
+[ext_resource type="AudioStream" uid="uid://la53npy1qfu4" path="res://Audios/effects/explosion.wav" id="3_t7mty"]
+[ext_resource type="Texture2D" uid="uid://4ch4mougqtsb" path="res://sprites/Enemies/CaterKiller.png" id="4_ku3xu"]
+
+[sub_resource type="Animation" id="Animation_x1cb2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_t2nrx"]
+resource_name = "move"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4561n"]
+_data = {
+&"RESET": SubResource("Animation_x1cb2"),
+&"move": SubResource("Animation_t2nrx")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf00q"]
+size = Vector2(17, 17)
+
+[node name="Catterkiller" type="CharacterBody2D" unique_id=378846230]
+position = Vector2(0, 2)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_s3gcn")
+player_mask = 5
+head_radius = Vector2(16, 16)
+body_radius = Vector2(16, 16)
+attack_frame = 0
+explosion_scene = ExtResource("2_0n2u3")
+destroy_sound = ExtResource("3_t7mty")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1536274603]
+libraries/ = SubResource("AnimationLibrary_4561n")
+autoplay = &"move"
+
+[node name="Body3" type="Node2D" parent="." unique_id=470270249]
+position = Vector2(26, -10)
+
+[node name="Skin" type="Sprite2D" parent="Body3" unique_id=1190394310]
+position = Vector2(0, 1)
+texture = ExtResource("4_ku3xu")
+hframes = 3
+frame = 2
+
+[node name="Hitbox" type="Area2D" parent="Body3" unique_id=1124740566]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body3/Hitbox" unique_id=1509390607]
+position = Vector2(-0.5, 8.5)
+shape = SubResource("RectangleShape2D_kf00q")
+
+[node name="Body2" type="Node2D" parent="." unique_id=1509062751]
+z_index = 1
+position = Vector2(9, -10)
+
+[node name="Skin" type="Sprite2D" parent="Body2" unique_id=689590267]
+position = Vector2(0, 1)
+texture = ExtResource("4_ku3xu")
+hframes = 3
+frame = 2
+
+[node name="Hitbox" type="Area2D" parent="Body2" unique_id=1495085043]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body2/Hitbox" unique_id=2129670541]
+position = Vector2(-0.5, 8.5)
+shape = SubResource("RectangleShape2D_kf00q")
+
+[node name="Body1" type="Node2D" parent="." unique_id=63149976]
+z_index = 1
+position = Vector2(-8, -10)
+
+[node name="Skin" type="Sprite2D" parent="Body1" unique_id=387033857]
+position = Vector2(0, 1)
+texture = ExtResource("4_ku3xu")
+hframes = 3
+frame = 2
+
+[node name="Hitbox" type="Area2D" parent="Body1" unique_id=1889440257]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body1/Hitbox" unique_id=989421695]
+position = Vector2(-0.5, 8.5)
+shape = SubResource("RectangleShape2D_kf00q")
+
+[node name="Head" type="Node2D" parent="." unique_id=1899943205]
+z_index = 2
+position = Vector2(-25, -10)
+
+[node name="Skin" type="Sprite2D" parent="Head" unique_id=1574891907]
+position = Vector2(0, 1)
+texture = ExtResource("4_ku3xu")
+hframes = 3
+
+[node name="Hitbox" type="Area2D" parent="Head" unique_id=1028854453]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Hitbox" unique_id=452013087]
+position = Vector2(-0.5, 8.5)
+shape = SubResource("RectangleShape2D_kf00q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1889508233]

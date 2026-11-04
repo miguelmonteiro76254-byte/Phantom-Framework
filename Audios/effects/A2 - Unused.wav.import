@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgt48txp4ymh5"
+path="res://.godot/imported/A2 - Unused.wav-f1bbdcf5fb73baec6f2f282b70163b28.sample"
+
+[deps]
+
+source_file="res://Audios/effects/A2 - Unused.wav"
+dest_files=["res://.godot/imported/A2 - Unused.wav-f1bbdcf5fb73baec6f2f282b70163b28.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

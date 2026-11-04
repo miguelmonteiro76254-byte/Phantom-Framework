@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8romg65m0vch"
+path="res://.godot/imported/AA - Splash.wav-3a31ff493031fbf6b86369555af732a4.sample"
+
+[deps]
+
+source_file="res://Audios/effects/AA - Splash.wav"
+dest_files=["res://.godot/imported/AA - Splash.wav-3a31ff493031fbf6b86369555af732a4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

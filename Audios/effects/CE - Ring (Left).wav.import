@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://coau5hkgqh88r"
+path="res://.godot/imported/CE - Ring (Left).wav-e8338eaa91c488641f75819df8925701.sample"
+
+[deps]
+
+source_file="res://Audios/effects/CE - Ring (Left).wav"
+dest_files=["res://.godot/imported/CE - Ring (Left).wav-e8338eaa91c488641f75819df8925701.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

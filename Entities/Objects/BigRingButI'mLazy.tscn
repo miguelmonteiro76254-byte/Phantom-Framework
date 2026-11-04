@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://cjmmiage7v5q7"]
+
+[ext_resource type="Script" uid="uid://qc08moy7g28j" path="res://Scripts/Objects/ActSign.gd" id="1_7o48x"]
+[ext_resource type="AudioStream" uid="uid://djoafn38gph0h" path="res://Audios/effects/sign_post.wav" id="2_n6p66"]
+[ext_resource type="AudioStream" uid="uid://dyivovn348c1j" path="res://Audios/musics/act-clear.wav" id="3_000qq"]
+[ext_resource type="Texture2D" uid="uid://bumrsxylc4y10" path="res://sprites/Objects/BigRing.png" id="4_xy1pf"]
+
+[sub_resource type="Animation" id="Animation_jj62w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_tycfh"]
+resource_name = "eggman"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_van2l"]
+resource_name = "sonic"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wbev1"]
+_data = {
+&"RESET": SubResource("Animation_jj62w"),
+&"eggman": SubResource("Animation_tycfh"),
+&"sonic": SubResource("Animation_van2l")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfxke"]
+radius = 24.0
+
+[node name="BigRingButI\'mLazy" type="Node2D" unique_id=707966623 node_paths=PackedStringArray("board", "animation_player", "spin_sound", "clear_sound", "touch_area")]
+z_index = -1
+script = ExtResource("1_7o48x")
+board = NodePath(".")
+animation_player = NodePath("AnimationPlayer")
+spin_sound = NodePath("AudioStreamPlayer")
+clear_sound = NodePath("AudioStreamPlayer2")
+touch_area = NodePath("Area2D")
+anim_idle = &"Don\'t Use This Its broke Plz"
+anim_spin = &"sonic"
+next_scene = "res://Scenes/Presentation/Title_Screen.tscn"
+spin_time = 1.0
+hop_height = 70.0
+hop_up_fraction = 0.205
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1883576724]
+libraries/ = SubResource("AnimationLibrary_wbev1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1635694619]
+stream = ExtResource("2_n6p66")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1296469165]
+stream = ExtResource("3_000qq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=803328557]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1977917058]
+shape = SubResource("CircleShape2D_bfxke")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=196389368]
+texture = ExtResource("4_xy1pf")
+hframes = 7

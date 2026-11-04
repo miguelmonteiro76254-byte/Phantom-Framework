@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d1vn528s0llbj"
+path="res://.godot/imported/B5 - Ring.wav-9720521248564b29fdd84e8b6e75e474.sample"
+
+[deps]
+
+source_file="res://Audios/effects/B5 - Ring.wav"
+dest_files=["res://.godot/imported/B5 - Ring.wav-9720521248564b29fdd84e8b6e75e474.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

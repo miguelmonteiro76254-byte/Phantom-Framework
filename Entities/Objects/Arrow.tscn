@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bjaw85t3fmpw5"]
+
+[ext_resource type="Script" uid="uid://cr40gm8ewoqwv" path="res://Scripts/Objects/Arrow.gd" id="1_2bpx2"]
+[ext_resource type="Texture2D" uid="uid://0lnrnsw4almx" path="res://sprites/Objects/Arrow.png" id="2_p7qf4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w46vl"]
+size = Vector2(36, 5)
+
+[node name="Node2D" type="Node2D" unique_id=723815327 node_paths=PackedStringArray("skin", "platform", "platform_shape")]
+z_index = -1
+script = ExtResource("1_2bpx2")
+skin = NodePath("Sprite2D")
+platform = NodePath("StaticBody2D")
+platform_shape = NodePath("StaticBody2D/CollisionShape2D")
+max_flight_time = 9.223372e+18
+sprite_faces_right = false
+enemy_groups = Array[StringName]([&"splats", &"motobug", &"catterkiller"])
+stick_to_walls = true
+stick_time = 10.0
+make_platform = true
+platform_offset = Vector2(8, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2090559491]
+position = Vector2(9.536743e-07, 0)
+scale = Vector2(1.9782609, 1)
+texture = ExtResource("2_p7qf4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=20358708]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1965112328]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_w46vl")

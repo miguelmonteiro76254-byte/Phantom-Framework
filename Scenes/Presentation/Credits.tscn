@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c4a0fqromv7ct"]
+
+[ext_resource type="FontFile" uid="uid://ml62eqfe7avn" path="res://sprites/fonts/small_font.png" id="1_rvpur"]
+[ext_resource type="FontFile" uid="uid://btb3lh3cpnc6x" path="res://sprites/fonts/mid_font.png" id="2_fv741"]
+
+[node name="Credits" type="Control" unique_id=769843628]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=286842421]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 264.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("1_rvpur")
+text = "MIGHTY SPRITES BY
+AKIMACA32X ON DEVIANTART"
+
+[node name="Label5" type="Label" parent="." unique_id=1334015467]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 320.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_fv741")
+text = "ADITIONAL CREDITS"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1365541439]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 264.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("1_rvpur")
+text = "SONIC SPECIAL SPRITES BY
+GEMGUY64"
+
+[node name="Label6" type="Label" parent="." unique_id=1076151140]
+layout_mode = 0
+offset_top = 231.0
+offset_right = 264.0
+offset_bottom = 239.0
+theme_override_fonts/font = ExtResource("1_rvpur")
+text = "PRESS ESC TO TITLE SCREEN"
+
+[node name="Label3" type="Label" parent="." unique_id=653043875]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 264.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("1_rvpur")
+text = "FONTS AND STUFF BY OTHER FRAMEWORK GUYS,
+THANK U"
+
+[node name="Label4" type="Label" parent="." unique_id=441272777]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 183.0
+theme_override_fonts/font = ExtResource("1_rvpur")
+text = "CODING N STUFF BY MR.ARCH
+
+TILES BY MCSPIN"

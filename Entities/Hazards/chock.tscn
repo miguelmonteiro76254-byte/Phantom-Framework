@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cjm74p7x0pav5"]
+
+[ext_resource type="Script" uid="uid://bqby0esdt56da" path="res://Scripts/Hazards/ThatChockingThing.gd" id="1_48078"]
+[ext_resource type="Texture2D" uid="uid://ccrppwxjnyshx" path="res://sprites/Hazards/I still don't know the name of this.png" id="2_7ympe"]
+[ext_resource type="AudioStream" uid="uid://ccex1njent0tu" path="res://Audios/effects/B1 - SBZ Electric.wav" id="3_o1fdb"]
+
+[sub_resource type="Animation" id="Animation_8ftuw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_r2ver"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hbh5q"]
+resource_name = "shock"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6bceq"]
+_data = {
+&"RESET": SubResource("Animation_8ftuw"),
+&"idle": SubResource("Animation_r2ver"),
+&"shock": SubResource("Animation_hbh5q")
+}
+
+[node name="Chock" type="Node2D" unique_id=1605820015 node_paths=PackedStringArray("animation_player", "shock_sound")]
+script = ExtResource("1_48078")
+animation_player = NodePath("AnimationPlayer")
+shock_sound = NodePath("AudioStreamPlayer")
+anim_warn = &""
+idle_time = 0.5
+shock_time = 0.3
+beam_length = 64.0
+beam_thickness = 16.0
+beam_offset = Vector2(0, -8)
+beam_color = Color(0.4, 0.9019608, 1, 0)
+beam_core_color = Color(1, 1, 1, 0)
+warn_color = Color(0.4, 0.9019608, 1, 0)
+player_mask = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1187184199]
+libraries/ = SubResource("AnimationLibrary_6bceq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=262036544]
+position = Vector2(1, 0)
+texture = ExtResource("2_7ympe")
+vframes = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=680782381]
+stream = ExtResource("3_o1fdb")

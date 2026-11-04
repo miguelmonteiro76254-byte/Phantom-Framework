@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://d068lq7c8i77f"]
+
+[ext_resource type="Script" uid="uid://btml3nimx244y" path="res://Scripts/Objects/Rings.gd" id="1_nb87c"]
+[ext_resource type="Texture2D" uid="uid://dxyuyr25c86ma" path="res://sprites/Objects/Ring.png" id="2_8fyj8"]
+[ext_resource type="AudioStream" uid="uid://duy37nc30v5q4" path="res://Audios/effects/ring.wav" id="3_70k0f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vc7tg"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_2050b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_n16ua"]
+resource_name = "Ring"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fpp6d"]
+_data = {
+&"RESET": SubResource("Animation_2050b"),
+&"Ring": SubResource("Animation_n16ua")
+}
+
+[node name="Rings" type="Area2D" unique_id=923897480 node_paths=PackedStringArray("sound")]
+script = ExtResource("1_nb87c")
+sound = NodePath("AudioStreamPlayer")
+draw_placeholder = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1918405834]
+shape = SubResource("CircleShape2D_vc7tg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=296486582]
+texture = ExtResource("2_8fyj8")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1142303193]
+libraries/ = SubResource("AnimationLibrary_fpp6d")
+autoplay = &"Ring"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1561963884]
+stream = ExtResource("3_70k0f")

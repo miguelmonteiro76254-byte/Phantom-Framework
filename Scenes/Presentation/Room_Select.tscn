@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bdixl8jdgeiof"]
+
+[ext_resource type="Script" uid="uid://gj1l0khpi3t8" path="res://Scripts/Debug/room_select.gd" id="1_x7yhd"]
+[ext_resource type="AudioStream" uid="uid://dd5lev25lkqi2" path="res://Audios/effects/switch.mp3" id="2_2nmho"]
+[ext_resource type="FontFile" uid="uid://152m6ve5kca6" path="res://fonts/title_screen.fnt" id="3_dhksb"]
+[ext_resource type="AudioStream" uid="uid://cx3tuihdsm6gs" path="res://Audios/effects/star_post.wav" id="4_ykp2e"]
+
+[node name="Control" type="Control" unique_id=356495811]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x7yhd")
+title_scene = "res://Scenes/Presentation/Title_Screen.tscn"
+title_text = "ROOM_SELECT"
+player_title_text = "PLAYER_SELECT"
+cpu_title_text = "CPU_SELECT"
+font = ExtResource("3_dhksb")
+move_sound = ExtResource("2_2nmho")
+confirm_sound = ExtResource("4_ykp2e")
+input_cancel = &"ui_back"
+font_size = 16
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2114369272]
+stream = ExtResource("2_2nmho")

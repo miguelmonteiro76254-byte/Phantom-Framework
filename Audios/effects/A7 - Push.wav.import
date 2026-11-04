@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvouctn41pftb"
+path="res://.godot/imported/A7 - Push.wav-b4f23efda889345e43223afad1c7142c.sample"
+
+[deps]
+
+source_file="res://Audios/effects/A7 - Push.wav"
+dest_files=["res://.godot/imported/A7 - Push.wav-b4f23efda889345e43223afad1c7142c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

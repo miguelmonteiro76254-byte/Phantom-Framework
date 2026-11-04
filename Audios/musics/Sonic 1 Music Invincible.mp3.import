@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chvd1oddtldu8"
+path="res://.godot/imported/Sonic 1 Music Invincible.mp3-8add987332bbb092d014b9ba23ab29cb.mp3str"
+
+[deps]
+
+source_file="res://Audios/musics/Sonic 1 Music Invincible.mp3"
+dest_files=["res://.godot/imported/Sonic 1 Music Invincible.mp3-8add987332bbb092d014b9ba23ab29cb.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.975
+bpm=0.0
+beat_count=0
+bar_beats=4

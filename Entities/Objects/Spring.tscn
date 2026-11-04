@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ca1cbbco616ae"]
+
+[ext_resource type="Script" uid="uid://6ny0bf4qxd36" path="res://Scripts/Objects/Spring.gd" id="1_errrb"]
+[ext_resource type="Texture2D" uid="uid://bwbskcq25s8ut" path="res://sprites/Objects/Spring.png" id="2_w3ixr"]
+[ext_resource type="AudioStream" uid="uid://bumbyoglvavvm" path="res://Audios/effects/spring.wav" id="3_a1f44"]
+
+[sub_resource type="Animation" id="Animation_c680j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5jkwv"]
+resource_name = "bounce"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 4, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0yr5"]
+_data = {
+&"RESET": SubResource("Animation_c680j"),
+&"bounce": SubResource("Animation_5jkwv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2xyf"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7cla"]
+size = Vector2(30, 13)
+
+[node name="Spring" type="StaticBody2D" unique_id=213492646 node_paths=PackedStringArray("animation_player", "sound")]
+script = ExtResource("1_errrb")
+animation_player = NodePath("AnimationPlayer")
+sound = NodePath("AudioStreamPlayer2D")
+draw_placeholder = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1296437625]
+position = Vector2(-2, -16)
+texture = ExtResource("2_w3ixr")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1286741112]
+libraries/ = SubResource("AnimationLibrary_c0yr5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2116713564]
+stream = ExtResource("3_a1f44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=839174014]
+shape = SubResource("RectangleShape2D_n2xyf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1073639132]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1419153510]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_a7cla")

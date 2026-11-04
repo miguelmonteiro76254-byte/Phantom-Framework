@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ceiyya7gywhty"]
+
+[ext_resource type="Script" uid="uid://bb2k667ayxstf" path="res://Scripts/Sensors/LoopThingSensor.gd" id="1_27aap"]
+[ext_resource type="Texture2D" uid="uid://ejyakbdgfmj4" path="res://sprites/Objects/MonitorIcons.png" id="2_w6hvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n436g"]
+size = Vector2(16, 16)
+
+[node name="LoopSensor" type="Area2D" unique_id=1086038625 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_27aap")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=341801803]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(8, 8)
+texture = ExtResource("2_w6hvk")
+hframes = 11
+vframes = 3
+frame = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1684785062]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_n436g")

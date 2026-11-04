@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dahniwdywutft"
+path="res://.godot/imported/BB - LZ Flapping Door.wav-659a27abedf0410a36a8cdcf5f9bfd73.sample"
+
+[deps]
+
+source_file="res://Audios/effects/BB - LZ Flapping Door.wav"
+dest_files=["res://.godot/imported/BB - LZ Flapping Door.wav-659a27abedf0410a36a8cdcf5f9bfd73.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

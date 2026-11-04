@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cl3h86beklwal"
+path="res://.godot/imported/CC - Spring.wav-51e57704f78732e36895c07b14dfa88c.sample"
+
+[deps]
+
+source_file="res://Audios/effects/CC - Spring.wav"
+dest_files=["res://.godot/imported/CC - Spring.wav-51e57704f78732e36895c07b14dfa88c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

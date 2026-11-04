@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cxcuge2dedkqk"]
+
+[ext_resource type="Script" uid="uid://bqk374q4v76u5" path="res://Scripts/Objects/HorizontalBar.gd" id="1_pbe7p"]
+[ext_resource type="Texture2D" uid="uid://dd5eojulhijwv" path="res://sprites/Objects/Bar.png" id="2_wthdr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te5xo"]
+size = Vector2(93, 6)
+
+[node name="HorizontalBar" type="Area2D" unique_id=1342086661]
+position = Vector2(0, 4)
+script = ExtResource("1_pbe7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=205517665]
+texture = ExtResource("2_wthdr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2083591338]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_te5xo")

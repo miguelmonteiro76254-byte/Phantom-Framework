@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dkanl4rsdpf42"]
+
+[ext_resource type="Script" uid="uid://xiqxe3awgie2" path="res://Scripts/Hud/pause.gd" id="1_f1nh6"]
+[ext_resource type="FontFile" uid="uid://5m0jxxfqsjwh" path="res://fonts/main_menu.fnt" id="2_q8lk4"]
+[ext_resource type="Texture2D" uid="uid://beuf7r5al2on0" path="res://sprites/HUD/Pause.png" id="3_bmjbe"]
+
+[node name="Pause" type="CanvasLayer" unique_id=1102153029 node_paths=PackedStringArray("dim_rect", "resume_label", "restart_label", "quit_label")]
+layer = 128
+script = ExtResource("1_f1nh6")
+dim_rect = NodePath("DimRect")
+resume_label = NodePath("Label")
+restart_label = NodePath("Label2")
+quit_label = NodePath("Label3")
+font = ExtResource("2_q8lk4")
+font_size = 16
+selected_color = Color(0.715832, 0.155483, 1.92523e-07, 1)
+unselected_color = null
+dim_color = null
+dim_time = null
+selected_scale = null
+pause_action = null
+select_action = null
+
+[node name="DimRect" type="ColorRect" parent="." unique_id=816625619]
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0.160784, 0.309804)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1629529009]
+offset_left = 191.0
+offset_top = 112.0
+offset_right = 321.0
+offset_bottom = 242.0
+texture = ExtResource("3_bmjbe")
+
+[node name="Label" type="Label" parent="." unique_id=1993707357]
+offset_left = 255.0
+offset_top = 152.0
+offset_right = 303.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("2_q8lk4")
+text = "RESUME"
+
+[node name="Label2" type="Label" parent="." unique_id=1497419071]
+offset_left = 239.0
+offset_top = 176.0
+offset_right = 279.0
+offset_bottom = 199.0
+theme_override_fonts/font = ExtResource("2_q8lk4")
+text = "RESET"
+
+[node name="Label3" type="Label" parent="." unique_id=1268164142]
+offset_left = 231.0
+offset_top = 200.0
+offset_right = 259.0
+offset_bottom = 223.0
+theme_override_fonts/font = ExtResource("2_q8lk4")
+text = "QUIT"
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=1400382287]
+visible = false
+top_level = true
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)

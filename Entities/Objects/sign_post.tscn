@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://g2rdofxb32y6"]
+
+[ext_resource type="Script" uid="uid://qc08moy7g28j" path="res://Scripts/Objects/ActSign.gd" id="1_0glq6"]
+[ext_resource type="AudioStream" uid="uid://djoafn38gph0h" path="res://Audios/effects/sign_post.wav" id="2_8lbdn"]
+[ext_resource type="AudioStream" uid="uid://dyivovn348c1j" path="res://Audios/musics/act-clear.wav" id="3_lguf3"]
+[ext_resource type="Texture2D" uid="uid://c1ghksdsh8iky" path="res://sprites/Objects/signpost.png" id="4_hpvk4"]
+
+[sub_resource type="Animation" id="Animation_jj62w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tycfh"]
+resource_name = "eggman"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_van2l"]
+resource_name = "sonic"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_r2do0"]
+resource_name = "spinning"
+length = 0.5332
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 1, 2, 3, 5, 1, 2, 3, 6, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wbev1"]
+_data = {
+&"RESET": SubResource("Animation_jj62w"),
+&"eggman": SubResource("Animation_tycfh"),
+&"sonic": SubResource("Animation_van2l"),
+&"spinning": SubResource("Animation_r2do0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlqf2"]
+size = Vector2(48, 48)
+
+[node name="SignPost" type="Node2D" unique_id=27657058 node_paths=PackedStringArray("board", "animation_player", "spin_sound", "clear_sound", "touch_area")]
+z_index = -1
+script = ExtResource("1_0glq6")
+board = NodePath(".")
+animation_player = NodePath("AnimationPlayer")
+spin_sound = NodePath("AudioStreamPlayer")
+clear_sound = NodePath("AudioStreamPlayer2")
+touch_area = NodePath("Area2D")
+next_scene = "res://Scenes/Presentation/Title_Screen.tscn"
+spin_time = 1.0
+hop_height = 70.0
+hop_up_fraction = 0.205
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=499991517]
+libraries/ = SubResource("AnimationLibrary_wbev1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=172001115]
+stream = ExtResource("2_8lbdn")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1929118558]
+stream = ExtResource("3_lguf3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1707403820]
+texture = ExtResource("4_hpvk4")
+hframes = 7
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2064095241]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=655274278]
+shape = SubResource("RectangleShape2D_nlqf2")

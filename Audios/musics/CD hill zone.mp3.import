@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhip0dy7yny7v"
+path="res://.godot/imported/CD hill zone.mp3-0d6d2c3f8de05dded97afd73ebb384ad.mp3str"
+
+[deps]
+
+source_file="res://Audios/musics/CD hill zone.mp3"
+dest_files=["res://.godot/imported/CD hill zone.mp3-0d6d2c3f8de05dded97afd73ebb384ad.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

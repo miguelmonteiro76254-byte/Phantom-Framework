@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvvwfgpakurry"
+path="res://.godot/imported/BE - Spin.wav-86533631053854028a39e01045e428d2.sample"
+
+[deps]
+
+source_file="res://Audios/effects/BE - Spin.wav"
+dest_files=["res://.godot/imported/BE - Spin.wav-86533631053854028a39e01045e428d2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

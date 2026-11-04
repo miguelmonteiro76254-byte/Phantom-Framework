@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://1sxr1tyl8y4e"]
+
+[ext_resource type="Texture2D" uid="uid://b5s7lht55ptdh" path="res://sprites/BG/Iron Forest/Act2/4.png" id="1_xxypw"]
+[ext_resource type="Texture2D" uid="uid://cwwoc4my3tgld" path="res://sprites/BG/Iron Forest/Act2/3.png" id="2_5ro3v"]
+[ext_resource type="Texture2D" uid="uid://hcthh7i25lvj" path="res://sprites/BG/Iron Forest/Act2/2.png" id="3_3jonm"]
+[ext_resource type="Texture2D" uid="uid://88tu4aofb5n5" path="res://sprites/BG/Iron Forest/1.png" id="4_4tam8"]
+[ext_resource type="Texture2D" uid="uid://ds6quafr61lo4" path="res://sprites/BG/Iron Forest/Act2/1.png" id="4_uam23"]
+
+[node name="Iron Forest" type="ParallaxBackground" unique_id=1385200576]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=243143586]
+position = Vector2(-16, -384)
+motion_scale = Vector2(0.2, 0.65)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer" unique_id=805298742]
+offset_left = -165377.0
+offset_right = 207104.0
+offset_bottom = 536.0
+texture = ExtResource("1_xxypw")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer" unique_id=667171144]
+offset_left = -165376.0
+offset_top = -23616.0
+offset_right = 207104.0
+color = Color(0.054902, 0.109804, 0.258824, 1)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="." unique_id=1973586703]
+position = Vector2(-16, -384)
+motion_scale = Vector2(0.3, 0.65)
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxLayer2" unique_id=476876046]
+offset_left = -165377.0
+offset_right = 207104.0
+offset_bottom = 536.0
+texture = ExtResource("2_5ro3v")
+stretch_mode = 1
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="." unique_id=690190184]
+position = Vector2(-16, -384)
+motion_scale = Vector2(0.4, 0.65)
+
+[node name="TextureRect3" type="TextureRect" parent="ParallaxLayer3" unique_id=1831763909]
+offset_left = -165377.0
+offset_right = 207104.0
+offset_bottom = 536.0
+texture = ExtResource("3_3jonm")
+stretch_mode = 1
+
+[node name="Trees" type="ParallaxLayer" parent="." unique_id=1198333062]
+position = Vector2(-11, -279)
+motion_scale = Vector2(0.6, 0.65)
+
+[node name="TextureRect" type="TextureRect" parent="Trees" unique_id=381027798]
+offset_left = -165381.0
+offset_top = 239.0
+offset_right = 207099.0
+offset_bottom = 21671.0
+texture = ExtResource("4_4tam8")
+stretch_mode = 1
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="." unique_id=329354585]
+position = Vector2(-16, -384)
+motion_scale = Vector2(0.7, 0.65)
+
+[node name="TextureRect4" type="TextureRect" parent="ParallaxLayer4" unique_id=1552775632]
+offset_left = -165377.0
+offset_right = 207104.0
+offset_bottom = 536.0
+texture = ExtResource("4_uam23")
+stretch_mode = 1

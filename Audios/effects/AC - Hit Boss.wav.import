@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cocshnruf3fos"
+path="res://.godot/imported/AC - Hit Boss.wav-2b52ccf84861652664ad6c1ddccada8f.sample"
+
+[deps]
+
+source_file="res://Audios/effects/AC - Hit Boss.wav"
+dest_files=["res://.godot/imported/AC - Hit Boss.wav-2b52ccf84861652664ad6c1ddccada8f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6pemesoye14t"
+path="res://.godot/imported/sonic retro intro.mp3-f9d2192d4acab02a05f33a740bd7854d.mp3str"
+
+[deps]
+
+source_file="res://Audios/music/sonic retro intro.mp3"
+dest_files=["res://.godot/imported/sonic retro intro.mp3-f9d2192d4acab02a05f33a740bd7854d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
