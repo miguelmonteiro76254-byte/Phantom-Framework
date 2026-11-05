@@ -129,6 +129,11 @@ enum FlyLoop { NONE, RISE, FALL }
 @export_group("Score")
 @export var badnik_chain_points: Array[int] = [100, 200, 500, 1000]
 
+@export_group("Score Popup")
+@export var score_popup_scene: PackedScene = preload("res://Entities/Hud/ScorePopup.tscn")
+@export var score_popup_min_points := 100
+@export var score_popup_offset := Vector2(0.0, -16.0)
+
 @export_group("Collision")
 @export var col_normal: CollisionShape2D
 @export var col_crouch: CollisionShape2D
@@ -787,7 +792,21 @@ func hit_badnik() -> int:
 	var pts: int = badnik_chain_points[mini(badnik_chain, badnik_chain_points.size() - 1)]
 	badnik_chain += 1
 	Score.add(pts)
+	spawn_score_popup(pts)
 	return pts
+
+
+func spawn_score_popup(points: int, at: Vector2 = Vector2.INF) -> void:
+	if points < score_popup_min_points or score_popup_scene == null:
+		return
+	var popup := score_popup_scene.instantiate() as ScorePopup
+	if popup == null:
+		push_warning("Player: score_popup_scene não tem o script ScorePopup na raiz.")
+		return
+	popup.points = points
+	get_parent().add_child(popup)
+	var origin := _focus_origin() if at == Vector2.INF else at
+	popup.global_position = origin + score_popup_offset
 
 
 func set_arrow_enabled(value: bool) -> void:
@@ -1038,6 +1057,7 @@ func _clear_ghosts() -> void:
 		g.queue_free()
 	_ghosts.clear()
 	_ghost_history.clear()
+
 
 func hurt(source_x: float, source: Node = null) -> void:
 	if not is_vulnerable():
@@ -1480,6 +1500,7 @@ func _process_stomp(delta: float) -> void:
 			velocity = Vector2(0.0, -stomp_bounce_speed)
 			is_jumping = true
 			_apply_collision(CollisionMode.JUMP)
+
 
 func _start_glide() -> void:
 	is_jumping = false

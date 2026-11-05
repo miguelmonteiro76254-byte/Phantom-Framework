@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://lb4dkfbctyra"]
+
+[ext_resource type="Texture2D" uid="uid://dgwuwjy7vdome" path="res://sprites/HUD/ScorePopup/100.png" id="1_0k32c"]
+[ext_resource type="Script" uid="uid://df3jxs176yi0m" path="res://Scripts/Objects/ScoreLabel.gd" id="1_mrtk5"]
+
+[node name="ScorePopup" type="Sprite2D" unique_id=424010384]
+texture = ExtResource("1_0k32c")
+script = ExtResource("1_mrtk5")
