@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cp4iu2i13ta1q" path="res://sprites/HUD/ACT1.png" id="2_wt1q5"]
 [ext_resource type="Texture2D" uid="uid://emktgyuxg6mn" path="res://sprites/HUD/ACT2.png" id="3_x2e5g"]
 [ext_resource type="Texture2D" uid="uid://bphddr3wki42f" path="res://sprites/HUD/ACT3.png" id="4_tti3r"]
-[ext_resource type="FontFile" uid="uid://ml62eqfe7avn" path="res://sprites/fonts/small_font_s1.png" id="5_wt1q5"]
 [ext_resource type="Script" uid="uid://b3wgycq5eahte" path="res://Scripts/Hud/Rings.gd" id="6_ox4qe"]
 [ext_resource type="Texture2D" uid="uid://bcmyklo22tanf" path="res://sprites/HUD/hud.png" id="6_tti3r"]
 [ext_resource type="FontFile" uid="uid://jcrvgg3twiit" path="res://sprites/HUD/hud_numbers_font.png" id="6_x2e5g"]
 [ext_resource type="Shader" uid="uid://cmsh74yfkisn4" path="res://Pallete Stuff/PaletteSwapRow.gdshader" id="7_rqtaf"]
 [ext_resource type="Texture2D" uid="uid://dxk7773l1wym4" path="res://Pallete Stuff/Sonic.png" id="8_7bado"]
+[ext_resource type="FontFile" uid="uid://cj70hn8i05uo5" path="res://sprites/fonts/hud_lives_numerals.png" id="8_rqtaf"]
 [ext_resource type="Texture2D" uid="uid://bw5rexfovv2hw" path="res://sprites/HUD/life_icons/SonicS1.png" id="9_2077k"]
 [ext_resource type="FontFile" uid="uid://c4vmn01mvioh3" path="res://fonts/title_card.fnt" id="10_efqmu"]
 [ext_resource type="Texture2D" uid="uid://ctyeocernimfe" path="res://sprites/HUD/life_names/Sonics.png" id="12_2077k"]
@@ -110,11 +110,10 @@ shader_parameter/row = 1.0
 shader_parameter/approximation = 0.0
 shader_parameter/paletteTexture = ExtResource("8_7bado")
 
-[node name="HUD" type="CanvasLayer" unique_id=2033274962 node_paths=PackedStringArray("word1_label", "word2_label", "act_label", "act_sprite", "encore_node", "lives_label", "icon_node", "name_node", "min_label", "sec_label", "ms_label", "score_label", "extra_life_sound")]
+[node name="HUD" type="CanvasLayer" unique_id=2033274962 node_paths=PackedStringArray("word1_label", "act_label", "act_sprite", "encore_node", "lives_label", "icon_node", "name_node", "min_label", "sec_label", "ms_label", "score_label", "extra_life_sound")]
 layer = 50
 script = ExtResource("1_wqylk")
 word1_label = NodePath("TitleCardGameOverAndOtherStuff/Name/ZoneNameWord1")
-word2_label = NodePath("")
 act_label = NodePath("TitleCardGameOverAndOtherStuff/ZoneAct/ZoneNameAct")
 act_sprite = NodePath("TitleCardGameOverAndOtherStuff/ZoneAct/Act")
 encore_node = NodePath("TitleCardGameOverAndOtherStuff/ZoneAct/Encore")
@@ -173,10 +172,10 @@ text = "00"
 
 [node name="Lives" type="Label" parent="." unique_id=1832383580]
 offset_left = 48.0
-offset_top = 217.0
-offset_right = 64.0
-offset_bottom = 225.0
-theme_override_fonts/font = ExtResource("5_wt1q5")
+offset_top = 216.0
+offset_right = 56.0
+offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("8_rqtaf")
 text = "3"
 
 [node name="Min" type="Label" parent="." unique_id=1789111207]

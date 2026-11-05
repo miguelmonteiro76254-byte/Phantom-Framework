@@ -33,22 +33,6 @@ window/size/mode=4
 window/size/resizable=false
 window/stretch/mode="viewport"
 
-[importer_defaults]
-
-font_data_image={
-"ascent": 0,
-"character_margin": Rect2i(0, 0, 0, 0),
-"character_ranges": PackedStringArray("48-57", "65-90", "42", "46", "44", "95", "40-41", "45", "32"),
-"columns": 10,
-"compress": true,
-"descent": 0,
-"fallbacks": [],
-"image_margin": Rect2i(0, 0, 0, 0),
-"kerning_pairs": PackedStringArray(),
-"rows": 5,
-"scaling_mode": 0
-}
-
 [input]
 
 ui_accept={

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dwgnq2x53ui4d"]
 
 [ext_resource type="Script" uid="uid://d07w5u4plv0v4" path="res://Scripts/Hud/Level_Select_S2.gd" id="1_xx341"]
-[ext_resource type="FontFile" uid="uid://b3qebdtmdc6e5" path="res://sprites/fonts/small_font_s1.png" id="2_4aihh"]
 [ext_resource type="Texture2D" uid="uid://d3qvo0bqnefna" path="res://sprites/LevelSelect/Icon/Default.png" id="2_70fr2"]
 [ext_resource type="AudioStream" uid="uid://vtm2vnykyd8k" path="res://Audios/musics/Options.mp3" id="3_4aihh"]
 [ext_resource type="Texture2D" uid="uid://ebs5aeremjtj" path="res://sprites/LevelSelect/BG.png" id="3_6g55c"]
+[ext_resource type="FontFile" uid="uid://ml62eqfe7avn" path="res://sprites/fonts/small_font.png" id="4_70fr2"]
 
 [node name="Control" type="Control" unique_id=1379480403]
 layout_mode = 3
@@ -25,5 +25,5 @@ zone_names = {
 icon_folder = "res://sprites/LevelSelect/Icon"
 default_icon = ExtResource("2_70fr2")
 music = ExtResource("3_4aihh")
-font = ExtResource("2_4aihh")
+font = ExtResource("4_70fr2")
 background_texture = ExtResource("3_6g55c")

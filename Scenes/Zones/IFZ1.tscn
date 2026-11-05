@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://g2rdofxb32y6" path="res://Entities/Objects/sign_post.tscn" id="17_xv4iv"]
 [ext_resource type="PackedScene" uid="uid://oo0a20gfc7tu" path="res://Entities/Objects/Monitor.tscn" id="18_nhy7g"]
 [ext_resource type="PackedScene" uid="uid://cxcuge2dedkqk" path="res://Entities/Objects/HorizontalBar.tscn" id="19_dnhf6"]
-[ext_resource type="PackedScene" uid="uid://dujuwiyq7kmqy" path="res://Entities/Bosses/MetalSonic.tscn" id="19_u0se5"]
 
 [node name="LevelTest" type="Node2D" unique_id=1073160294]
 script = ExtResource("1_amoko")
@@ -187,7 +186,7 @@ direction = 1
 strength = 750.0
 
 [node name="SignPost" parent="Objects" unique_id=911221677 instance=ExtResource("17_xv4iv")]
-position = Vector2(5824, -2968)
+position = Vector2(3928, -872)
 trigger_mode = 1
 next_scene = "res://Scenes/Zones/Playground.tscn"
 
@@ -263,12 +262,6 @@ position = Vector2(5757, -768)
 [node name="Monitor3" parent="Objects" unique_id=2104517797 instance=ExtResource("18_nhy7g")]
 position = Vector2(3696, 223)
 monitor_type = 2
-
-[node name="MetalSonicBoss" parent="Objects" unique_id=1108129488 node_paths=PackedStringArray("arena_camera_marker") instance=ExtResource("19_u0se5")]
-position = Vector2(3884, -848)
-max_health = 15
-arena_camera_marker = NodePath("../../Marker2D")
-arena_camera_offset = Vector2(0, 0)
 
 [node name="Spring8" parent="Objects" unique_id=219897981 instance=ExtResource("12_kkf2b")]
 z_index = -1

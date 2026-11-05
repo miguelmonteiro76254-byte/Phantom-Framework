@@ -213,8 +213,7 @@ super_music = ExtResource("3_sipnm")
 [node name="BG" parent="." unique_id=1347629734 instance=ExtResource("4_ohr5t")]
 
 [node name="HUD" parent="." unique_id=2033274962 instance=ExtResource("5_vq8i7")]
-zone_name_word1 = "DARK"
-zone_name_word2 = "CASTLE"
+zone_name_word = "DARK CASTLE"
 act_number = 0
 time_bonus_limits = Array[float]([])
 time_bonus_values = Array[float]([])
