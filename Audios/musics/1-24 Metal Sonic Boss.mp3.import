@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgn3w6wt78ia3"
+path="res://.godot/imported/1-24 Metal Sonic Boss.mp3-7105ae87500aa1ca40a8bb694f2ae406.mp3str"
+
+[deps]
+
+source_file="res://Audios/musics/1-24 Metal Sonic Boss.mp3"
+dest_files=["res://.godot/imported/1-24 Metal Sonic Boss.mp3-7105ae87500aa1ca40a8bb694f2ae406.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=3.5
+bpm=0.0
+beat_count=0
+bar_beats=4

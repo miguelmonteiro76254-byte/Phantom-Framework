@@ -37,6 +37,7 @@ var _music_resume_pos := 0.0
 var player: Node2D
 var music_player: AudioStreamPlayer
 var super_music_player: AudioStreamPlayer
+var music_suppressed := false
 var _walls: StaticBody2D
 var _gizmo: Node2D
 var _music_stopped := false
@@ -98,6 +99,12 @@ func stop_music() -> void:
 		super_music_player.stop()
 
 
+func suppress_music(on: bool) -> void:
+	music_suppressed = on
+	if on and super_music_player != null:
+		super_music_player.stop()
+
+
 func _setup_player() -> void:
 	player.set("kill_y", float(bounds.end.y) + death_margin)
 	for f in get_tree().get_nodes_in_group("follower"):
@@ -130,7 +137,7 @@ func _on_player_died() -> void:
 
 
 func _on_super_started() -> void:
-	if super_music_player == null or _music_stopped:
+	if super_music_player == null or _music_stopped or music_suppressed:
 		return
 	if music_player != null and music_player.playing:
 		_music_resume_pos = music_player.get_playback_position()
@@ -142,7 +149,7 @@ func _on_super_ended() -> void:
 	if super_music_player == null:
 		return
 	super_music_player.stop()
-	if _music_stopped:
+	if _music_stopped or music_suppressed:
 		return
 	if music_player != null:
 		music_player.play()

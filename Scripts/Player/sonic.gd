@@ -1148,16 +1148,15 @@ func die() -> void:
 		Lives.lose()
 	get_tree().create_timer(maxf(respawn_delay - ScreenFade.fade_time, 0.0)).timeout.connect(_on_respawn_timeout)
 
-
 func _on_respawn_timeout() -> void:
 	if uses_lives and Lives.is_game_over():
 		await ScreenFade.fade_out()
 		Lives.reset()
 		Score.reset()
+		Checkpoint.reset_checkpoint()
 		ScreenFade.change_scene(title_scene, false)
 	else:
 		ScreenFade.reload_scene()
-
 
 func _scatter_rings() -> void:
 	var count := mini(rings, max_scattered_rings)

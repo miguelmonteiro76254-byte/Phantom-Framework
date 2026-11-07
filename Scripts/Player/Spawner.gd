@@ -22,12 +22,21 @@ func _spawn_all() -> void:
 		player_scene = _load_scene(LevelSelect.selected_player, default_player)
 		cpu_scene = _load_scene(LevelSelect.selected_cpu, null)
 
+	var player_position := global_position
 	var cpu_position := global_position + cpu_offset
 	if cpu_spawn != null:
 		cpu_position = cpu_spawn.global_position
 
-	player = _spawn(player_scene, global_position)
+	var from_checkpoint := Checkpoint.is_valid_here()
+	if from_checkpoint:
+		player_position = Checkpoint.checkpoint_position
+		cpu_position = player_position + cpu_offset
+
+	player = _spawn(player_scene, player_position)
 	cpu = _spawn(cpu_scene, cpu_position)
+
+	if from_checkpoint and player != null and player.has_method("snap_camera"):
+		player.call("snap_camera")
 
 
 func _load_scene(path: String, fallback: PackedScene) -> PackedScene:
@@ -44,6 +53,12 @@ func _spawn(scene: PackedScene, at: Vector2) -> Node:
 		return null
 	var instance := scene.instantiate()
 	var parent: Node = spawn_parent if spawn_parent != null else get_parent()
+	if instance is Node2D:
+		var parent_2d := parent as Node2D
+		if parent_2d != null:
+			instance.position = parent_2d.to_local(at)
+		else:
+			instance.position = at
 	parent.add_child(instance)
 	if instance is Node2D:
 		instance.global_position = at
