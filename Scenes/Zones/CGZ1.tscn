@@ -1,0 +1,144 @@
+[gd_scene format=4 uid="uid://bu5bgpjdjctby"]
+
+[ext_resource type="Script" uid="uid://cdjwvccx8paag" path="res://Scripts/Level/Zone.gd" id="1_vd3xk"]
+[ext_resource type="AudioStream" uid="uid://82foklinudp2" path="res://Audios/musics/no_way.ogg" id="2_wwcs1"]
+[ext_resource type="AudioStream" uid="uid://baq7gxbu3emir" path="res://Audios/musics/super_artisian.ogg" id="3_sfnse"]
+[ext_resource type="PackedScene" uid="uid://dkanl4rsdpf42" path="res://Entities/Hud/pause.tscn" id="4_i8p82"]
+[ext_resource type="Texture2D" uid="uid://ccnrnuwh7i6jj" path="res://sprites/Tileset/Castle Garden/1.png" id="5_7yh18"]
+[ext_resource type="PackedScene" uid="uid://c4gh7mdn88fbt" path="res://Entities/Hud/huds1.tscn" id="6_03w1y"]
+[ext_resource type="PackedScene" uid="uid://wvx35au3tjsa" path="res://Entities/Sensors/spawner.tscn" id="7_lnos3"]
+[ext_resource type="PackedScene" uid="uid://cmjsnxnnqliul" path="res://Entities/Player/CDSonic.tscn" id="8_gktll"]
+[ext_resource type="PackedScene" uid="uid://dujuwiyq7kmqy" path="res://Entities/Bosses/MetalSonic.tscn" id="9_5uaao"]
+[ext_resource type="PackedScene" uid="uid://c6arhc2pnd83a" path="res://Entities/Objects/Checkpoint.tscn" id="10_bg471"]
+[ext_resource type="PackedScene" uid="uid://oo0a20gfc7tu" path="res://Entities/Objects/Monitor.tscn" id="11_qdq73"]
+[ext_resource type="PackedScene" uid="uid://g2rdofxb32y6" path="res://Entities/Objects/sign_post.tscn" id="12_oghdk"]
+[ext_resource type="PackedScene" uid="uid://6spdhbr86y5a" path="res://Entities/BG/Hill/BG.tscn" id="13_qkewx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqb6i"]
+texture = ExtResource("5_7yh18")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 32, 128, 32, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 32, 128, 32, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 32, 128, 32, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 32, 128, 32, 128, 128, -128, 128)
+3:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-128, -128, 128, -128, 128, -104, -128, -104)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 32, 128, 32, 128, 128, 0, 128)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 32, -128, 32, -128, 128, 0, 128)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -32, 128, -32, 128, 128, 0, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -32, -128, -32, -128, 128, 0, 128)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -32, 128, -32, 128, 64, -128, 64)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 32, 128, 32, 128, 128, -128, 128)
+2:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-128, -128, 128, -128, 128, -104, -128, -104)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 32, 128, 32, 128, 128, -128, 128)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 32, 128, 32, 128, 128, -128, 128)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 32, 128, 32, 128, 128, -128, 128)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 32, 128, 32, 128, 128, -128, 128)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -32, 128, -32, 128, 64, -128, 64)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 32, 128, 32, 128, 128, 0, 128)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 32, -128, 32, -128, 128, 0, 128)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -32, 128, -32, 128, 128, 0, 128)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -32, -128, -32, -128, 128, 0, 128)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_80ct6"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
+sources/1 = SubResource("TileSetAtlasSource_kqb6i")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oddoi"]
+size = Vector2(128, 510.5)
+
+[node name="LevelTest" type="Node2D" unique_id=1073160294]
+script = ExtResource("1_vd3xk")
+bounds = Rect2i(0, -3184, 6077, 3438)
+music = ExtResource("2_wwcs1")
+super_music = ExtResource("3_sfnse")
+
+[node name="Pause" parent="." unique_id=1612688265 instance=ExtResource("4_i8p82")]
+visible = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1397016214]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQAAAAAAAAASAAAAAQAAAAAAAAATAAAAAQAAAAAAAAAUAAAAAQAAAAAAAAAVAAAAAQAAAAAAAAAWAAAAAQAAAAAAAAAXAAAAAQAAAAAAAAAYAAAAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_80ct6")
+
+[node name="HUD" parent="." unique_id=965714720 instance=ExtResource("6_03w1y")]
+zone_name_word = "CASTLE GARDEN"
+
+[node name="Spawner" parent="." unique_id=846200109 instance=ExtResource("7_lnos3")]
+position = Vector2(128, 96)
+default_player = ExtResource("8_gktll")
+
+[node name="Objects" type="Node2D" parent="." unique_id=1410200572]
+
+[node name="MetalSonic" parent="Objects" unique_id=233268115 node_paths=PackedStringArray("fight_trigger", "arena_camera_marker") instance=ExtResource("9_5uaao")]
+z_index = 6
+position = Vector2(1213, 38)
+fight_trigger = NodePath("../../Area2D2")
+arena_camera_marker = NodePath("../../Marker2D")
+
+[node name="Checkpoint" parent="Objects" unique_id=1732670137 instance=ExtResource("10_bg471")]
+position = Vector2(2752, 32)
+
+[node name="Monitor" parent="Objects" unique_id=2104517797 instance=ExtResource("11_qdq73")]
+position = Vector2(240, 112)
+
+[node name="Monitor3" parent="Objects" unique_id=1756258762 instance=ExtResource("11_qdq73")]
+position = Vector2(272, 112)
+
+[node name="Monitor4" parent="Objects" unique_id=603310357 instance=ExtResource("11_qdq73")]
+position = Vector2(304, 112)
+
+[node name="Monitor5" parent="Objects" unique_id=58142783 instance=ExtResource("11_qdq73")]
+position = Vector2(336, 112)
+
+[node name="Monitor6" parent="Objects" unique_id=390799953 instance=ExtResource("11_qdq73")]
+position = Vector2(368, 112)
+
+[node name="Monitor7" parent="Objects" unique_id=2071924198 instance=ExtResource("11_qdq73")]
+position = Vector2(400, 112)
+
+[node name="Monitor8" parent="Objects" unique_id=1826206416 instance=ExtResource("11_qdq73")]
+position = Vector2(432, 112)
+
+[node name="Monitor2" parent="Objects" unique_id=1869562076 instance=ExtResource("11_qdq73")]
+position = Vector2(2528, 48)
+
+[node name="SignPost" parent="Objects" unique_id=27657058 instance=ExtResource("12_oghdk")]
+position = Vector2(4208, 96)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=615924773]
+position = Vector2(3344, -240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1670866376]
+position = Vector2(48, 240.75)
+shape = SubResource("RectangleShape2D_oddoi")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=43554165]
+position = Vector2(3536, 3)
+
+[node name="BG" parent="." unique_id=1779954145 instance=ExtResource("13_qkewx")]

@@ -186,7 +186,7 @@ direction = 1
 strength = 750.0
 
 [node name="SignPost" parent="Objects" unique_id=911221677 instance=ExtResource("17_xv4iv")]
-position = Vector2(3888, -872)
+position = Vector2(3888, -848)
 trigger_mode = 1
 next_scene = "res://Scenes/Zones/Playground.tscn"
 

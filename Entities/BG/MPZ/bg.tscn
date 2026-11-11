@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cr67nn702n6gw"]
+
+[ext_resource type="Texture2D" uid="uid://webwt180g0pq" path="res://sprites/BG/Moonlight Paradise/Sky.png" id="1_o3l1h"]
+[ext_resource type="Texture2D" uid="uid://bgxsro7hlaw0f" path="res://sprites/BG/Moonlight Paradise/clouds.png" id="2_o3sni"]
+[ext_resource type="Texture2D" uid="uid://dodju8rstvqtc" path="res://sprites/BG/Moonlight Paradise/montain.png" id="3_1h7n1"]
+[ext_resource type="Texture2D" uid="uid://3u47ga4dk5i" path="res://sprites/BG/Moonlight Paradise/lake1.png" id="4_70k4t"]
+[ext_resource type="Texture2D" uid="uid://dvl2frdpg4pkb" path="res://sprites/BG/Moonlight Paradise/lake3.png" id="5_4kaol"]
+[ext_resource type="Texture2D" uid="uid://bsx1hpuj5gdlj" path="res://sprites/BG/Moonlight Paradise/BackFoward.png" id="6_4dcwa"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4rya8"]
+load_path = "res://.godot/imported/lake2.png-c781e90bd5377bf597a76d9632cc9cca.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_mltfe"]
+frames = 3
+frame_0/texture = ExtResource("4_70k4t")
+frame_0/duration = 0.1
+frame_1/texture = SubResource("CompressedTexture2D_4rya8")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("5_4kaol")
+frame_2/duration = 0.1
+
+[node name="ParallaxBackground" type="ParallaxBackground" unique_id=248254268]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="." unique_id=155048592]
+position = Vector2(-5120, -9344)
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer2" unique_id=93768444]
+offset_left = 4960.0
+offset_top = -48.0
+offset_right = 28832.0
+offset_bottom = 9512.0
+texture = ExtResource("1_o3l1h")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="." unique_id=1976558475]
+position = Vector2(-5120, -9344)
+motion_scale = Vector2(0.3, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer5" unique_id=1119559484]
+offset_left = 176.0
+offset_top = -1312.0
+offset_right = 42240.0
+offset_bottom = 10208.0
+texture = ExtResource("2_o3sni")
+stretch_mode = 1
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="." unique_id=32034279]
+position = Vector2(-5120, -9344)
+motion_scale = Vector2(0.4, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer3" unique_id=2090543348]
+offset_left = 5008.0
+offset_top = 9312.0
+offset_right = 28880.0
+offset_bottom = 9392.0
+texture = ExtResource("3_1h7n1")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=679710451]
+position = Vector2(-16, 96)
+motion_scale = Vector2(0.6, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer" unique_id=362246234]
+offset_left = -96.0
+offset_top = -48.0
+offset_right = 23776.0
+offset_bottom = 192.0
+texture = SubResource("AnimatedTexture_mltfe")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="." unique_id=968516528]
+position = Vector2(-16, 96)
+motion_scale = Vector2(0.8, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer4" unique_id=1576432858]
+offset_top = 72.0
+offset_right = 23792.0
+offset_bottom = 173.0
+texture = ExtResource("6_4dcwa")
+stretch_mode = 1

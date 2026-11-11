@@ -1,0 +1,146 @@
+[gd_scene format=4 uid="uid://cdevm4j4h37wp"]
+
+[ext_resource type="Script" uid="uid://cdjwvccx8paag" path="res://Scripts/Level/Zone.gd" id="1_la2rp"]
+[ext_resource type="AudioStream" uid="uid://c10q0m2p3p7of" path="res://Audios/musics/Palmtree_Panic_Past_Salad_Plain_Past_CDDA_Ver__Extended_-_Sonic_CD_Proto_v0_02.mp3" id="2_0yblb"]
+[ext_resource type="AudioStream" uid="uid://baq7gxbu3emir" path="res://Audios/musics/super_artisian.ogg" id="3_mltfe"]
+[ext_resource type="PackedScene" uid="uid://dkanl4rsdpf42" path="res://Entities/Hud/pause.tscn" id="4_4rya8"]
+[ext_resource type="PackedScene" uid="uid://cr67nn702n6gw" path="res://Entities/BG/MPZ/bg.tscn" id="4_la2rp"]
+[ext_resource type="Texture2D" uid="uid://t7a3ipjhr87j" path="res://sprites/Tileset/Moonlight Paradise/1.png" id="5_la2rp"]
+[ext_resource type="PackedScene" uid="uid://c4gh7mdn88fbt" path="res://Entities/Hud/huds1.tscn" id="6_0yblb"]
+[ext_resource type="PackedScene" uid="uid://wvx35au3tjsa" path="res://Entities/Sensors/spawner.tscn" id="7_a5uot"]
+[ext_resource type="PackedScene" uid="uid://cmjsnxnnqliul" path="res://Entities/Player/CDSonic.tscn" id="8_pporm"]
+[ext_resource type="PackedScene" uid="uid://c6arhc2pnd83a" path="res://Entities/Objects/Checkpoint.tscn" id="10_xfv22"]
+[ext_resource type="PackedScene" uid="uid://oo0a20gfc7tu" path="res://Entities/Objects/Monitor.tscn" id="11_6i2qa"]
+[ext_resource type="PackedScene" uid="uid://g2rdofxb32y6" path="res://Entities/Objects/sign_post.tscn" id="12_yg3w7"]
+[ext_resource type="PackedScene" uid="uid://ca1cbbco616ae" path="res://Entities/Objects/Spring.tscn" id="14_fwvtt"]
+[ext_resource type="PackedScene" uid="uid://b3aevf0rln2en" path="res://Entities/Objects/horizontal_bar_part2.tscn" id="16_4rya8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mltfe"]
+texture = ExtResource("5_la2rp")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 0, 0, 0, 40, 8, 128, 48, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0/physics_layer_1/polygon_0/one_way = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 0, 128, 0, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 48, -40, 8, 0, 0, 128, 0, 128, 128, -128, 128)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 0, 128, 0, 128, 128, -128, 128)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 0, 128, 0, 128, -128, -128, -128)
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 48, 128, 48, 128, 128, -128, 128)
+3:3/0 = 0
+3:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(-128, 48, 128, 48, 128, 128, -128, 128)
+3:3/0/physics_layer_1/polygon_0/one_way = true
+
+[sub_resource type="TileSet" id="TileSet_mltfe"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
+physics_layer_1/collision_layer = 7
+physics_layer_1/collision_mask = 7
+sources/2 = SubResource("TileSetAtlasSource_mltfe")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwvtt"]
+texture = ExtResource("5_la2rp")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 0, 0, 0, 40, 8, 128, 48, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 0, 128, 0, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 48, -40, 8, 0, 0, 128, 0, 128, 128, -128, 128)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 48, 128, 48, 128, 128, -128, 128)
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_80ct6"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
+sources/2 = SubResource("TileSetAtlasSource_fwvtt")
+
+[node name="LevelTest" type="Node2D" unique_id=1073160294]
+script = ExtResource("1_la2rp")
+bounds = Rect2i(0, -3184, 6077, 3438)
+music = ExtResource("2_0yblb")
+super_music = ExtResource("3_mltfe")
+
+[node name="ParallaxBackground" parent="." unique_id=248254268 instance=ExtResource("4_la2rp")]
+
+[node name="Pause" parent="." unique_id=1612688265 instance=ExtResource("4_4rya8")]
+visible = false
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1842957562]
+z_index = -1
+tile_map_data = PackedByteArray("AAAAAAAAAgABAAEAAAAAAP//AgABAAEAAAABAP//AgABAAEAAAABAAAAAgABAAEAAAAFAP//AgABAAAAAAA=")
+tile_set = SubResource("TileSet_mltfe")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1397016214]
+tile_map_data = PackedByteArray("AAAAAAAAAgACAAMAAAABAAAAAgACAAMAAAACAAAAAgADAAAAAAADAAAAAgABAAAAAAADAP//AgACAAMAAAAEAP//AgADAAAAAAAFAP//AgACAAAAAAAEAAAAAgABAAAAAAAFAAAAAgABAAAAAAAGAP//AgAAAAAAAAAGAAAAAgABAAAAAAAAAP7/AgACAAMAAAABAP7/AgACAAMAAAAHAAAAAgACAAMAAAAIAAAAAgACAAMAAAAJAAAAAgACAAMAAAA=")
+tile_set = SubResource("TileSet_80ct6")
+
+[node name="HUD" parent="." unique_id=965714720 instance=ExtResource("6_0yblb")]
+zone_name_word = "MOONLIGHT PARADISE"
+
+[node name="Spawner" parent="." unique_id=846200109 instance=ExtResource("7_a5uot")]
+position = Vector2(111, 176)
+default_player = ExtResource("8_pporm")
+
+[node name="Objects" type="Node2D" parent="." unique_id=1410200572]
+
+[node name="Checkpoint" parent="Objects" unique_id=1732670137 instance=ExtResource("10_xfv22")]
+position = Vector2(2752, 32)
+
+[node name="Monitor2" parent="Objects" unique_id=1869562076 instance=ExtResource("11_6i2qa")]
+position = Vector2(144, -352)
+
+[node name="SignPost" parent="Objects" unique_id=27657058 instance=ExtResource("12_yg3w7")]
+position = Vector2(4208, 96)
+
+[node name="HorizontalBar" parent="Objects" unique_id=1342086661 instance=ExtResource("16_4rya8")]
+position = Vector2(736, -48)
+scale = Vector2(-1, 1)
+
+[node name="HorizontalBar2" parent="Objects" unique_id=947210388 instance=ExtResource("16_4rya8")]
+position = Vector2(736, 48)
+scale = Vector2(-1, 1)
+
+[node name="Spring" parent="Objects" unique_id=213492646 instance=ExtResource("14_fwvtt")]
+position = Vector2(1408, -136)
+strength = 500.0
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=43554165]
+position = Vector2(3536, 3)

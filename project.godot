@@ -24,6 +24,8 @@ ScreenFade="*res://Scripts/Hud/Fade_Screen.gd"
 Debug="*res://Scripts/Hud/Debug.gd"
 Score="*uid://cu12ig76fwxdb"
 LevelSelectS2="*uid://dy8h107ylw7ys"
+Emeralds="*uid://dqxn1hea4tq0l"
+Checkpoint="*uid://dk1buxriowljn"
 
 [display]
 

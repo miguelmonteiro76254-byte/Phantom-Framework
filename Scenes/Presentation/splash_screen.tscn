@@ -78,7 +78,7 @@ offset_bottom = 256.0
 texture = ExtResource("3_oj8np")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=236780711]
-position = Vector2(192, 144)
+position = Vector2(176, 144)
 texture = ExtResource("4_622be")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=445700628]

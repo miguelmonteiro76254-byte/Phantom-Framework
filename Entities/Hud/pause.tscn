@@ -22,44 +22,37 @@ pause_action = null
 select_action = null
 
 [node name="DimRect" type="ColorRect" parent="." unique_id=816625619]
-offset_right = 320.0
+offset_right = 432.0
 offset_bottom = 240.0
 color = Color(0, 0, 0.160784, 0.309804)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1629529009]
-offset_left = 191.0
+offset_left = 192.0
 offset_top = 112.0
-offset_right = 321.0
+offset_right = 322.0
 offset_bottom = 242.0
 texture = ExtResource("3_bmjbe")
 
 [node name="Label" type="Label" parent="." unique_id=1993707357]
-offset_left = 255.0
+offset_left = 256.0
 offset_top = 152.0
-offset_right = 303.0
+offset_right = 304.0
 offset_bottom = 175.0
 theme_override_fonts/font = ExtResource("2_q8lk4")
 text = "RESUME"
 
 [node name="Label2" type="Label" parent="." unique_id=1497419071]
-offset_left = 239.0
+offset_left = 240.0
 offset_top = 176.0
-offset_right = 279.0
+offset_right = 280.0
 offset_bottom = 199.0
 theme_override_fonts/font = ExtResource("2_q8lk4")
 text = "RESET"
 
 [node name="Label3" type="Label" parent="." unique_id=1268164142]
-offset_left = 231.0
+offset_left = 232.0
 offset_top = 200.0
-offset_right = 259.0
+offset_right = 260.0
 offset_bottom = 223.0
 theme_override_fonts/font = ExtResource("2_q8lk4")
 text = "QUIT"
-
-[node name="FadeRect" type="ColorRect" parent="." unique_id=1400382287]
-visible = false
-top_level = true
-offset_right = 320.0
-offset_bottom = 240.0
-color = Color(0, 0, 0, 1)

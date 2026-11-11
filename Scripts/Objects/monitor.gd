@@ -1,7 +1,7 @@
 class_name Monitor
 extends CharacterBody2D
 
-enum MonitorType { RINGS_10, SUPER, SHIELD }
+enum MonitorType { RINGS_10, SUPER, SHIELD, EMERALD }
 
 const MONITOR_ANIMATIONS := {
 	MonitorType.RINGS_10: &"rings",
@@ -11,6 +11,15 @@ const MONITOR_ANIMATIONS := {
 
 @export_group("Monitor")
 @export var monitor_type: MonitorType = MonitorType.RINGS_10
+
+@export_group("Emerald")
+@export var emerald_anim_prefix := "emerald_"
+@export var emerald_full_anim: StringName = &"rings"
+@export var emerald_full_rings := 10
+@export var emerald_points := 10
+@export var emerald_full_points := 10
+@export var emerald_live_refresh := true
+@export var emerald_give_rings := 0
 
 @export_group("Nodes")
 @export var detector: Area2D
@@ -35,6 +44,7 @@ const MONITOR_ANIMATIONS := {
 var _half_size := Vector2(16.0, 16.0)
 var _has_gravity := false
 var _broken := false
+var _emerald_shown := -1
 
 
 func _ready() -> void:
@@ -47,7 +57,10 @@ func _ready() -> void:
 		animation_player = get_node_or_null("AnimationPlayer") as AnimationPlayer
 	if break_sound == null:
 		break_sound = get_node_or_null("BreakSound") as AudioStreamPlayer
-	_play_type_animation()
+	if monitor_type == MonitorType.EMERALD:
+		_refresh_emerald(true)
+	else:
+		_play_type_animation()
 
 
 func _play_type_animation() -> void:
@@ -60,9 +73,36 @@ func _play_type_animation() -> void:
 	animation_player.play(anim)
 
 
+func _collected_emeralds() -> int:
+	return Emeralds.count
+
+
+func _emerald_animation(collected: int) -> StringName:
+	if collected >= Emeralds.total:
+		return emerald_full_anim
+	return StringName("%s%d" % [emerald_anim_prefix, collected + 1])
+
+
+func _refresh_emerald(force: bool) -> void:
+	var collected := _collected_emeralds()
+	if not force and collected == _emerald_shown:
+		return
+	_emerald_shown = collected
+	if animation_player == null:
+		return
+	var anim := _emerald_animation(collected)
+	if not animation_player.has_animation(anim):
+		push_warning("Monitor: no '%s' in AnimationPlayer." % anim)
+		return
+	animation_player.play(anim)
+
+
 func _physics_process(delta: float) -> void:
 	if _broken:
 		return
+
+	if monitor_type == MonitorType.EMERALD and emerald_live_refresh:
+		_refresh_emerald(false)
 
 	for node in get_tree().get_nodes_in_group(&"player"):
 		var p := node as Player
@@ -178,7 +218,21 @@ func _break(p: Player, bounce: bool) -> void:
 	queue_free()
 
 
+func _give_emerald_reward(p: Player) -> void:
+	if Emeralds.is_full():
+		Score.add(emerald_full_points)
+		p.add_rings(emerald_full_rings)
+		return
+	Score.add(emerald_points)
+	p.add_emerald()
+	if emerald_give_rings > 0:
+		p.add_rings(emerald_give_rings)
+
+
 func _give_reward(p: Player) -> void:
+	if monitor_type == MonitorType.EMERALD:
+		_give_emerald_reward(p)
+		return
 	Score.add(points)
 	match monitor_type:
 		MonitorType.RINGS_10:

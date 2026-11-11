@@ -101,10 +101,12 @@ stream = ExtResource("2_8lbdn")
 stream = ExtResource("3_lguf3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1707403820]
+position = Vector2(0, -24)
 texture = ExtResource("4_hpvk4")
 hframes = 7
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2064095241]
+position = Vector2(0, -24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=655274278]
 shape = SubResource("RectangleShape2D_nlqf2")

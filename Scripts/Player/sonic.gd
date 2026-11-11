@@ -8,6 +8,7 @@ signal super_started
 signal super_ended
 signal shield_gained
 signal shield_lost
+signal emerald_collected(count: int)
 
 enum State { GROUND, AIR, ROLL, SPINDASH, PEELOUT, HURT, DEAD, BAR, TRANSFORM, GLIDE, GLIDE_SLIDE, FLY, STOMP }
 enum CameraStyle { SONIC_1, SONIC_2, SONIC_CD }
@@ -301,6 +302,14 @@ var _ghost_blink_time := 0.0
 @export var pal_normal_to_super: StringName = &"normal_to_super"
 @export var pal_super_to_normal: StringName = &"super_to_normal"
 
+@export_group("Emeralds")
+@export var super_input_enabled := true
+@export var input_super: StringName = &"super"
+@export var super_min_rings := 50
+@export var super_requires_all_emeralds := true
+@export var super_requires_jump := true
+@export var super_in_air_only := true
+
 @export_group("Camera")
 @export var camera_enabled := true
 @export var camera_style: CameraStyle = CameraStyle.SONIC_CD
@@ -373,6 +382,11 @@ var facing := 1
 var control_lock := 0.0
 var spindash_charge := 0.0
 var rings := 0
+var emeralds: int:
+	get:
+		return Emeralds.count
+	set(value):
+		Emeralds.set_count(value)
 var is_jumping := false
 var is_spring := false
 var is_crouching := false
@@ -393,6 +407,7 @@ var _jump_pressed := false
 var _jump_held := false
 var _shoot_pressed := false
 var _stomp_pressed := false
+var _super_pressed := false
 var _deflect_fall := false
 var _deflect_grace := 0.0
 var _ball_timer := 0.0
@@ -693,6 +708,7 @@ func _read_input() -> void:
 		_jump_held = false
 		_shoot_pressed = false
 		_stomp_pressed = false
+		_super_pressed = false
 		return
 	_dir = int(signf(Input.get_axis(input_left, input_right)))
 	_up = Input.is_action_pressed(input_up)
@@ -701,6 +717,7 @@ func _read_input() -> void:
 	_jump_held = Input.is_action_pressed(input_jump)
 	_shoot_pressed = InputMap.has_action(input_shoot) and Input.is_action_just_pressed(input_shoot)
 	_stomp_pressed = InputMap.has_action(input_stomp) and Input.is_action_just_pressed(input_stomp)
+	_super_pressed = super_input_enabled and InputMap.has_action(input_super) and Input.is_action_just_pressed(input_super)
 
 
 func is_vulnerable() -> bool:
@@ -749,6 +766,38 @@ func is_attacking() -> bool:
 func add_rings(amount: int = 1) -> void:
 	rings += amount
 	rings_changed.emit(rings)
+
+
+func has_all_emeralds() -> bool:
+	return Emeralds.is_full()
+
+
+func add_emerald(amount: int = 1) -> void:
+	Emeralds.add(amount)
+	emerald_collected.emit(Emeralds.count)
+
+
+func can_super() -> bool:
+	if is_super or _super_pending > 0.0:
+		return false
+	if state == State.DEAD or state == State.TRANSFORM or state == State.HURT:
+		return false
+	if super_requires_all_emeralds and not has_all_emeralds():
+		return false
+	if rings < super_min_rings:
+		return false
+	if super_in_air_only and state != State.AIR:
+		return false
+	if super_requires_jump and not is_jumping:
+		return false
+	return true
+
+
+func _try_super_input() -> bool:
+	if not _super_pressed or not can_super():
+		return false
+	start_super()
+	return true
 
 
 func give_shield() -> void:
@@ -1435,6 +1484,9 @@ func _process_air(delta: float) -> void:
 
 	if _stomp_pressed and stomp_enabled and is_jumping:
 		_start_stomp()
+		return
+
+	if _try_super_input():
 		return
 
 	if _jump_pressed and _try_air_ability():

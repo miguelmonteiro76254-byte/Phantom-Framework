@@ -23,6 +23,7 @@ var _move_player: AudioStreamPlayer
 
 
 func _ready() -> void:
+	Emeralds.reset()
 	Lives.reset()
 	if music == null:
 		music = get_node_or_null("Music") as AudioStreamPlayer
